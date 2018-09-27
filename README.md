@@ -1,2 +1,2 @@
 # WordPress-Functions
-A collection of commonly used functions for WordPress websites
+A collection of commonly used functions and stylesheet additions for WordPress websites
