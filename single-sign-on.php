@@ -1,3 +1,4 @@
+<?php
 /*
 Plugin Name: Prevent Concurrent Account Usage
 Description: Stop users from accessing their account from multiple machines.
@@ -50,3 +51,5 @@ if( !function_exists('single_user_login_uid_check')){
 register_activation_hook( __FILE__, 'single_user_login_install' );
 add_action('wp_login','single_user_login_uid_create');
 add_action('init','single_user_login_uid_check');
+
+?>
