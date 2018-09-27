@@ -1,0 +1,199 @@
+@media only screen and (max-width: 767px) {
+      .hideonmobile { /*apply to anything you want to hide on larger devices*/
+		   display: none !important
+    	}
+}
+
+
+@media only screen and (min-width: 767px) {
+       .hideondesktop { /*apply to anything you want to hide on larger devices*/
+		   display: none !important
+    	}
+
+}
+
+
+.whitetext h1, .whitetext h2, .whitetext h3, .whitetext h4, .whitetext h5, .whitetext h6, .whitetext p, .whitetext a {
+	color: #FFF !important;
+}
+
+.darktext h1, .darktext h2, .darktext h3, .darktext h4, .darktext h5, .darktext h6, .darktext p, .darktext a {
+	color: #001 !important;
+}
+
+.shadowtext h1, .shadowtext h2, .shadowtext h3, .shadowtext h4, .shadowtext h5, .shadowtext h6, .shadowtext p, .shadowtext a {
+	text-shadow: #001 -1px 2px 2px!important;
+}
+
+.underline {
+	text-decoration: underline !important;
+}
+
+.splitlist {
+    -moz-column-count: 3;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 20px;
+    column-count: 3;
+    column-gap: 20px;
+}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
+
+
+.checklist li {
+    background-image: url('PATH TO IMAGE');
+    background-repeat: no-repeat;
+    padding-left: 55px;
+    list-style: none!important;
+    line-height: 24px;
+    padding-bottom: 17px;
+    font-size: 23px;
+ }
+
+.hoverimg img:hover {
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: .5s ease-in-out;
+  filter: grayscale(0%);
+} 
+.hoverimg img {
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(100%); 
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(100%); 
+  -o-transition: .5s ease-in-out;
+  filter: grayscale(100%);
+}
+
+/*Center contents of DIV horizontally*/
+.center-container {  
+    min-height: 6.5em;  
+    display: table-cell;  
+    vertical-align: middle;  
+}
+
+
+/*Video*/
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/*Gravity Forms*/
+.gfield_checkbox li input, .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox], .gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio] {
+	margin-top: 0px; 
+}
+
+.gform_wrapper form.gf_simple_horizontal div.gform_body ul.top_label {
+	padding: 5px 0px 0px 0px;
+}
+
+
+/*Grid*/
+/* ------- Fluid Columns ------- */
+.one_half{ width:48%; }
+.one_third{ width:30.66%; }
+.two_third{ width:65.33%; }
+.one_fourth{ width:22%; }
+.three_fourth{ width:74%; }
+.one_fifth{ width:16.8%; }
+.two_fifth{ width:37.6%; }
+.three_fifth{ width:58.4%; }
+.four_fifth{ width:67.2%; }
+.one_sixth{ width:13.33%; }
+.five_sixth{ width:82.67%; }
+.one_half,.one_third,.two_third,.three_fourth,.one_fourth,.one_fifth,.two_fifth,.three_fifth,.four_fifth,.one_sixth,.five_sixth{ position:relative; margin-right:4%; float:left; }
+.last{ margin-right:0 !important; clear:right; }
+.clearboth {clear:both;display:block;font-size:0;height:0;line-height:0;width:100%;}
+
+@media only screen and (max-width: 690px) {
+    .one_half{ width:98%; }
+    .one_third{ width:98%; }
+    .two_third{ width:98%; }
+    .one_fourth{ width:98%; }
+    .three_fourth{ width:98%; }
+    .one_fifth{ width:98%; }
+    .two_fifth{ width:98%; }
+    .three_fifth{ width:98%; }
+    .four_fifth{ width:98%; }
+    .one_sixth{ width:98%; }
+    .five_sixth{ width:98%; }
+    .one_half,.one_third,.two_third,.three_fourth,.one_fourth,.one_fifth,.two_fifth,.three_fifth,.four_fifth,.one_sixth,.five_sixth{ position:relative; margin-right:4%; float:left; }
+    .last{ margin-right:0 !important; clear:right; }
+    .clearboth {clear:both;display:block;font-size:0;height:0;line-height:0;width:100%;}
+
+
+    .splitlist {
+     -moz-column-count: 1;
+     -moz-column-gap: 20px;
+     -webkit-column-count: 1;
+     -webkit-column-gap: 20px;
+     column-count: 1;
+     column-gap: 20px;
+  }
+
+} /*end 690px*/
+
+
+
+
+/*Angled CSS Background Dividers, wrap within divs*/
+
+.bgstyle1 {
+  background-color: #013A6B;
+  background-image: -webkit-linear-gradient(30deg, #013A6B 50%, #004E95 50%);
+  min-height: 500px;
+}
+
+.bgstyle2 {
+  background-color: #34ADFF;
+  background-image: -webkit-linear-gradient(150deg, #34ADFF 35%, #4CBFFF 35%);
+  min-height: 400px;
+}
+
+.bgstyle3 {
+  background-color: #EFEEEF;
+  min-height: 260px;
+  
+}
+.bgstyle4 {
+  background-color: #E0E0E0;
+  min-height: 260px;
+}
+
+.bgstyle5 {
+  background-color: #EFEEEF;
+  min-height: 260px;
+}
+
+.bgstyle6 {
+  background-color: #34ADFF;
+  background-image: -webkit-linear-gradient(30deg, #34ADFF 45%, #4CBFFF 45%);
+  min-height: 400px;
+}
+
+.bgstyle7{
+  background-color: #013A6B;
+  background-image: -webkit-linear-gradient(150deg, #013A6B 35%, #004E95 35%);
+  min-height: 200px;
+}
