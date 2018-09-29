@@ -109,6 +109,15 @@ tr:nth-child(odd) {background: #FFF}
 }
 
 
+/*Flexbox*/
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-container > div {
+  flex: 1 1 300px;
+}
+
 /*Grid*/
 /* ------- Fluid Columns ------- */
 .one_half{ width:48%; }
