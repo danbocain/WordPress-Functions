@@ -25,6 +25,10 @@
 	text-shadow: #001 -1px 2px 2px!important;
 }
 
+.shadowbox {
+	    box-shadow: #c3c3c3 1px 3px 9px;
+}
+
 .underline {
 	text-decoration: underline !important;
 }
