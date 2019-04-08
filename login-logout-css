@@ -1,0 +1,14 @@
+
+.logged-in .hide-for-logged-in {
+	display: none!important;
+}
+.hide-for-logged-in {
+	display: block;
+}
+
+.hide-for-logged-out {
+	display: none!important;
+}
+.logged-in .hide-for-logged-out {
+	display: block!important;
+}
