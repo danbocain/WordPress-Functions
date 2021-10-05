@@ -1,0 +1,8 @@
+<!-- add to HTML widget in popup with window to force reload on jumplinks -->
+<script>
+jQuery(function($){
+$(document).on('click','.elementor-location-popup a', function(event){
+elementorProFrontend.modules.popup.closePopup( {}, event);
+});
+});
+</script>
