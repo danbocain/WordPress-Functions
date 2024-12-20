@@ -1,0 +1,64 @@
+
+function send_data_to_zaprite($entry, $form) {
+	
+	// Only proceed if the form ID is 1
+   /*
+    *  if ($form['id'] != 1) {
+        return; // Exit the function if the form ID is not 1
+    }
+	*/
+    // Retrieve data from the Gravity Form entry
+    $name  = rgar($entry, '18'); // Replace '1' with the actual field ID for the customer's name
+    $email = rgar($entry, '19'); // Replace '2' with the actual field ID for the customer's email
+    $cost  = rgar($entry, '16'); // Replace '3' with the actual field ID for the cost
+    $cost2  = rgar($entry, '15'); // Replace '3' with the actual field ID for the cost
+
+    // Your Zaprite API details
+    $api_url = "https://api.zaprite.com/v1/order";
+    $api_key = "YOUR-API-KEY-GOES-HERE"; // Replace with your actual API key
+
+    // Create the payload
+    $payload = array(
+        'amount'        => ((int)$cost * 100) + ((int)$cost2 * 100), // Ensure the cost is numeric and convert it into actual amount for ZAPRITE Payment Process.
+        'currency'      => 'USD',        // Adjust if needed
+        'externalUniqId'=> uniqid(),     // Generate a unique ID for the order
+        'redirectUrl'   => 'https://abundantmines.com/order-your-machine/order-placed/', // Adjust this URL as needed
+        'label'         => "Order for $name"     // Add a label
+    );
+
+    // Make the API request
+    $response = wp_remote_post($api_url, array(
+        'method'    => 'POST',
+        'headers'   => array(
+            'Authorization' => 'Bearer ' . $api_key,
+            'Content-Type'  => 'application/json',
+            'Accept'        => 'application/json',
+        ),
+        'body'      => json_encode($payload),
+        'timeout'   => 180,
+    ));
+	
+    // Handle the response
+    if (is_wp_error($response)) {
+        error_log('Zaprite API request failed: ' . $response->get_error_message());
+        return;
+    }
+
+    $response_code = wp_remote_retrieve_response_code($response);
+    $response_body = wp_remote_retrieve_body($response);
+
+    if ($response_code === 200 || $response_code === 201) {
+        // Decode and log the successful response
+        $response_data = json_decode($response_body, true);
+        error_log('Zaprite API response: ' . print_r($response_data, true));
+		wp_redirect($response_data['checkoutUrl']);
+    } else {
+        // Log the error response
+        error_log('Zaprite API request error: ' . $response_body);
+    }
+}
+
+// Hook into Gravity Forms' "gform_after_submission" action
+add_action('gform_after_submission', 'send_data_to_zaprite', 10, 2);
+
+
